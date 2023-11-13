@@ -1,4 +1,4 @@
-export default function TodoList({todos}) {
+export default function TodoList({ todos }) {
     return (
     <>
     <ul className="list">
