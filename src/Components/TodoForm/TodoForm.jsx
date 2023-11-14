@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function TodoForm ({ onSubmit }) {
+export default function TodoForm ({ onSubmit }) {
 
   const [newItem, setNewItem] = useState("");
 
+  //clears out the input space by checking if the state newItem is ""
   function handleSubmit(e) {
     e.preventDefault()
     if (newItem === "") return
   
     onSubmit(newItem)
-
     setNewItem("") 
     }
   
@@ -21,7 +21,7 @@ function TodoForm ({ onSubmit }) {
           <input
             type="text"
             value={newItem}
-            onChange={e => setNewItem(e.target.value)}
+            onChange={(e) => setNewItem(e.target.value)}
             name="text"
             id="item"
           />
@@ -31,4 +31,3 @@ function TodoForm ({ onSubmit }) {
   );
 }
 
-export default TodoForm;
