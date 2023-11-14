@@ -4,6 +4,8 @@ import   TodoForm  from './Components/TodoForm/TodoForm';
 
 export default function App() {
 
+  //place hooks at the very top of your code, they cant be placed inside loops etc (you can render hooks conditionally)
+
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem('ITEMS');
     if (localValue == null) return []
@@ -17,7 +19,6 @@ export default function App() {
   }, [todos])
 
   function addTodo(title) {
-    // e.preventDefault();
     setTodos(currentTodos => {
       return [
         ...currentTodos,
